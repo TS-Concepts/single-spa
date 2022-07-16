@@ -1,0 +1,50 @@
+- Layout Enginer
+  Usando o layout enginer voce pode estruturar
+  seu arquivo microfrontend-layout.html com as tags html do single-spa para montar sua página.
+
+  por exemplo:
+    <single-spa-router>
+        <header>
+            <application name="@Areadev/header"></application>
+        </header>
+        <main>
+            <route path="account">
+                <application name="@Areadev/account"></application>
+            </route>
+        </main>
+        <footer>
+            <application name="@Areadev/footer"></application>
+        </footer>
+    </single-spa-router>
+
+
+- Sem layout enginer
+    voce cria uma div no body do arquivo microfrontend-layout.html e cria o elemento usando o arquivdo react dentro do seu micro frontend
+
+    por exemplo
+    <div id="appName"></div>
+
+
+    singleSpa.registerApplication({
+        name: 'appName',
+        app: () => System.import('appName'),
+        activeWhen: '/appName',
+        customProps: {
+            authToken: 'xc67f6as87f7s9d'
+        }
+    })
+
+help: https://single-spa.js.org/docs/api/
+
+
+
+
+Dentro so Single-SPA tem o ciclo de vida para observar os microfrontends
+
+
+Pergunta: Layout enginer não é mais voltado para SSR?
+Resposta: hoje o single-spa nao tem maturidade para trabalhar com ssr, na documentação até tem mas não recomendo.
+microfrontend é um conceito como vc implementa é diferente
+
+https://www.youtube.com/watch?v=CD3YjjgJ9dA&ab_channel=ProgramadordeSucesso
+1:00:40

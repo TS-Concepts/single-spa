@@ -1,7 +1,7 @@
 {
-  "name": "@Areadev/shop",
+  "name": "@Areadev/account",
   "scripts": {
-    "start": "webpack serve --port 8500",
+    "start": "webpack serve --port 8310",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
@@ -60,5 +60,5 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9"
   },
-  "types": "dist/Areadev-shop.d.ts"
+  "types": "dist/Areadev-account.d.ts"
 }
