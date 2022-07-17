@@ -1,16 +1,36 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import singleSpaReact from "single-spa-react";
-import Root from "./root.component";
+import create from "zustand";
+import { combine } from "zustand/middleware";
 
-const lifecycles = singleSpaReact({
-  React,
-  ReactDOM,
-  rootComponent: Root,
-  errorBoundary(err, info, props) {
-    // Customize the root error boundary for your microfrontend here.
-    return null;
-  },
-});
+type CartProperties = {
+  counter: number;
+};
 
-export const { bootstrap, mount, unmount } = lifecycles;
+
+type CartMethods = {
+  increment: () => void;
+  decrement: () => void;
+};
+
+const store = combine<CartProperties, CartMethods>(
+  {
+    counter: 100,
+  }, 
+  (set) => ({
+    increment() {
+      set((state) => {
+        return {
+          counter: ++state.counter,
+        };
+      });
+    },
+    decrement() {
+      set((state) => {
+        return {
+          counter: --state.counter,
+        };
+      });
+    },
+  })
+);
+
+export const useStore = create(store);

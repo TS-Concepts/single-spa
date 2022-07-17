@@ -5,8 +5,8 @@ export default function Root(props) {
   const  store = useStore();
   return (
     <section>
-      <h1>Product!!!</h1>
-      <button onClick={store.decrement}>Decrement</button>
+      <h1>Cart!!!</h1>
+      <button onClick={store.increment}>Increment</button>
     </section>
   )
 }

@@ -46,5 +46,16 @@ Pergunta: Layout enginer não é mais voltado para SSR?
 Resposta: hoje o single-spa nao tem maturidade para trabalhar com ssr, na documentação até tem mas não recomendo.
 microfrontend é um conceito como vc implementa é diferente
 
-https://www.youtube.com/watch?v=CD3YjjgJ9dA&ab_channel=ProgramadordeSucesso
-1:00:40
+Pergunta: Qual a melhor estratégia de deploy em um projeto com SingleSPA?
+Vercel, AWS, Digital Ocean, O que vc recomenda?
+Resposta: depende?
+
+Pergunta: é uma boa estratégia colocar os MFEs em um CDN e o root em um container Docker para escalabilidade ou o melhor seria colocar
+tudo dentro de containers Docker?
+
+Resposta: tudo no single-spa é arquivo estatico. 
+
+RD Station utiliza MFE
+
+
+https://www.youtube.com/watch?v=M6Nzb8s7PDo&ab_channel=ProgramadordeSucesso
